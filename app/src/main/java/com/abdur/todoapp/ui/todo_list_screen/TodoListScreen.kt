@@ -63,6 +63,7 @@ fun TodoListScreen(
                 TodoItem(
                     todo = todos[currentTodo],
                     onDoneChange = viewmodel::onEvent,
+                    onDeleteTodo = viewmodel::onEvent
                 )
             }
         }

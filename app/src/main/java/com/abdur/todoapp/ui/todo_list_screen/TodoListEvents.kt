@@ -5,4 +5,6 @@ import com.abdur.todoapp.data.Todo
 sealed class TodoListEvents{
     data class OnDoneChange(val todo : Todo, val isDone : Boolean) : TodoListEvents()
     data class OnCreateTodo(val todo : Todo) : TodoListEvents()
+
+    data class OnDeleteTodo(val todo : Todo) : TodoListEvents()
 }

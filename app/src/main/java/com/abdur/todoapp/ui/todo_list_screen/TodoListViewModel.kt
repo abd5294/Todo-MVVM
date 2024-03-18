@@ -48,6 +48,12 @@ class TodoListViewModel @Inject constructor(
                 }
                 isDialogVisible = !isDialogVisible
             }
+
+            is TodoListEvents.OnDeleteTodo -> {
+                viewModelScope.launch {
+                    repository.deleteTodo(event.todo)
+                }
+            }
         }
     }
 }
