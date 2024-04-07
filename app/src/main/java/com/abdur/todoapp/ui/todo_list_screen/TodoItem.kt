@@ -56,16 +56,20 @@ fun TodoItem(
                     style = TextStyle(textDecoration = TextDecoration.LineThrough)
                 ) else Text(text = todo.todo, fontSize = 24.sp)
 
-            IconButton(onClick = { onDeleteTodo(TodoListEvents.OnDeleteTodo(todo)) }) {
-                Icon(imageVector = Icons.Default.Delete, contentDescription = "Delete Todo")
-            }
-
-            Checkbox(
-                checked = todo.isDone,
-                onCheckedChange = {
-                    onDoneChange(TodoListEvents.OnDoneChange(todo, it))
+            Row(
+                horizontalArrangement = Arrangement.Center,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                IconButton(onClick = { onDeleteTodo(TodoListEvents.OnDeleteTodo(todo)) }) {
+                    Icon(imageVector = Icons.Default.Delete, contentDescription = "Delete Todo")
                 }
-            )
+                Checkbox(
+                    checked = todo.isDone,
+                    onCheckedChange = {
+                        onDoneChange(TodoListEvents.OnDoneChange(todo, it))
+                    }
+                )
+            }
         }
     }
 }

@@ -1,6 +1,8 @@
 package com.abdur.todoapp.data
 
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+
 
 interface TodoRepository{
 
@@ -9,4 +11,9 @@ interface TodoRepository{
     suspend fun insertTodo(todo : Todo)
 
     suspend fun deleteTodo(todo : Todo)
+
+    fun asdf() = flow<String> {
+
+
+    }
 }

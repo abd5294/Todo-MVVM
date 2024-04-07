@@ -20,6 +20,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.abdur.todoapp.data.Todo
 import com.abdur.todoapp.ui.add_todo.AddTodoPopUp
 import com.abdur.todoapp.util.UiEvents
@@ -53,7 +54,6 @@ fun TodoListScreen(
             }
         }
     ) { paddingValues ->
-
         if (viewmodel.isDialogVisible){
             AddTodoPopUp()
         }
